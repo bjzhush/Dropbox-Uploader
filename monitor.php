@@ -45,14 +45,16 @@ if ($needUpload) {
         alert('error while writing cache file');
     }
 }
+$needUpload = true;
 
 if ($needUpload) {
     $shell = sprintf('proxychains bash %s/dropbox_uploader.sh upload %s/* /', $currentPath, $config['fileroot']);
-    $result = shell_exec($shell);
+    echo date('Y-m-d H:i:s');
+    $result = system($shell);
+#.$result.PHP_EOL;
     if (stripos($result, 'failed') !== false) {
         alert('Maybe something is wrong');
     }
-    echo date('Y-m-d H:i:s').$result.PHP_EOL;
 } else {
     echo date('Y-m-d H:i:s').'No need to upload'.PHP_EOL;
 }
