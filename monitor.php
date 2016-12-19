@@ -53,7 +53,7 @@ if ($needUpload) {
 
 //检查本地cache与服务器端是否对应
 foreach ($localFiles as $file) {
-    if (isset($serverFileInfo[$file]) && isset($allCacheArr[$file]) && $allCacheArr[$file] !== $serverFileInfo[$file]) {
+    if (isset($serverFileInfo[$file]) && isset($allCacheArr[$file]) && $allCacheArr[$file] != $serverFileInfo[$file]) {
         echo date('Y-m-d H:i:s');
         $errorInfo = $file.'更新有问题，服务器端文件不是本地上次的文件,请手动更新后再上传';
         echo $errorInfo.PHP_EOL;
