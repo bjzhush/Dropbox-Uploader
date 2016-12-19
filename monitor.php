@@ -45,7 +45,6 @@ if ($needUpload) {
         alert('error while writing cache file');
     }
 }
-$needUpload = true;
 
 if ($needUpload) {
     $shell = sprintf('proxychains bash %s/dropbox_uploader.sh upload %s/* /', $currentPath, $config['fileroot']);
